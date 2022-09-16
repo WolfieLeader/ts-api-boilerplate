@@ -6,3 +6,5 @@ const handleError = (err: any) => {
   if (typeof err === "string") return new CError(err, 500);
   return new CError("Unknown error", 500);
 };
+
+export default handleError;
