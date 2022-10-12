@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import handleError from "./handleError";
 
 /**Wrap your function with this High Order Function to avoid using try...catch all the time */
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const protect = (fn: Function) => (req: Request, res: Response, next: NextFunction) => {
   Promise.resolve(fn(req, res, next)).catch(next);
 };
